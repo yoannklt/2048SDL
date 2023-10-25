@@ -48,6 +48,28 @@ void Game::handleEvents()
 		isRunning = false;
 		break;
 
+	
+	case SDL_KEYDOWN:
+		switch (event.key.keysym.sym)
+		{
+		case SDLK_UP: 
+			std::cout << "UP ARROW PRESSED" << std::endl;
+			break;
+
+		case SDLK_DOWN:
+			std::cout << "DOWN ARROW PRESSED" << std::endl;
+			break;
+
+		case SDLK_LEFT:
+			std::cout << "LEFT ARROW PRESSED" << std::endl;
+			break;
+
+		case SDLK_RIGHT:
+			std::cout << "RIGHT ARROW PRESSED" << std::endl;
+			break;
+		}
+		break;
+
 	default:
 		break;
 	}

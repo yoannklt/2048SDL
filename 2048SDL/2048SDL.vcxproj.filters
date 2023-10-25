@@ -24,6 +24,12 @@
     <ClCompile Include="grid.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="textureManager.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClCompile>
+    <ClCompile Include="textureManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.hpp">
