@@ -1,14 +1,31 @@
-#include <iostream>
-#include "game.hpp"
+#pragma once 
+
+#include "cell.hpp"
+#include <vector>
 
 class Grid {
 public:
 	Grid();
-	~Grid();
+	~Grid() {};
 
-	void displayGrid();
+	int randomValue();
+	void generateRandomCell(int i = -1);
+	bool hasLost() { return lost; };
+	void render();
+	bool slide();
+	void setVect(int x, int y) { directionVect[0] = x; directionVect[1] = y; };
+	bool vectEmpty() { if (directionVect[0] + directionVect[1] == 0) return true; return false; }
+
+	void swapCell(Cell** cell1, Cell** cell2);
+
+	void isDefeat();
 
 private:
-	int grid[4][4] = { 0 };
 	bool lost = false;
+	std::vector<Cell*> emptyCellGrid;
+	int directionVect[2] = { 0, 0 };
+
+protected:
+	Cell* tab[4][4];
+
 };

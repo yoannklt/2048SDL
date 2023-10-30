@@ -2,7 +2,7 @@
 
 #include "game.hpp"
 
-class TextureManager {
+class GameObject {
 
 public:
 	static SDL_Texture* loadTexture(const char* fileName);

@@ -1,8 +1,12 @@
 #include <iostream>
 #include "SDL.h"
 #include "SDL_image.h"
+#include "grid.hpp"
 
 class Game {
+
+	Grid grid;
+
 public:
 
 	Game(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
