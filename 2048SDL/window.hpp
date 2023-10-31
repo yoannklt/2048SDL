@@ -1,7 +1,10 @@
+#pragma once
+
 #include <iostream>
-#include "SDL.h"
-#include "SDL_image.h"
 #include "grid.hpp"
+
+class SDL_Window;
+class SDL_Renderer;
 
 class Window {
 

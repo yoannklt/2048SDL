@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "Cell.hpp"
+
 Grid::Grid()
 {
 	for (int i = 0; i < 4; i++)
@@ -98,59 +100,42 @@ bool Grid::slide()
 
 void Grid::render() {
 
-	system("cls");
-
 	if (hasLost()) {
 		return;
 	}
-	std::cout << std::endl;
-
-	const char BOX_WALL[4] = " | ";
 
 	for (int i = 0; i < 4; i++)
 	{
-		std::cout << " " << "-----------------------------" << std::endl << " | ";
 		for (int j = 0; j < 4; j++)
 		{
 			switch (tab[i][j]->getValue())
 			{
-			case 0:
-				std::cout << "    " << BOX_WALL;
-				break;
-
 			case 2:
+				break;
 			case 4:
 			case 8:
-				std::cout << " " << tab[i][j]->getValue() << "  " << BOX_WALL;
 				break;
 
 			case 16:
 			case 32:
 			case 64:
-				std::cout << " " << tab[i][j]->getValue() << " " << BOX_WALL;
 				break;
 
 			case 128:
 			case 256:
 			case 512:
-				std::cout << tab[i][j]->getValue() << " " << BOX_WALL;
 				break;
 
 			case 1024:
 			case 2048:
 			case 4096:
-				std::cout << tab[i][j]->getValue() << "" << BOX_WALL;
 				break;
 
 			default:
-				std::cout << tab[i][j]->getValue() << BOX_WALL;
 				break;
 			}
 		}
-		std::cout << std::endl;
-
 	}
-	std::cout << " " << "-----------------------------" << std::endl;
 }
 
 void Grid::swapCell(Cell** cell1, Cell** cell2)

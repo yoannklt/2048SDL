@@ -1,4 +1,8 @@
-class Cell
+#pragma once
+
+#include "gameObject.hpp"
+
+class Cell : GameObject
 {
 public:
 	Cell();
@@ -8,6 +12,7 @@ public:
 	void resetMerge() { merge = false; };
 	void setValue(int newValue) { value = newValue; };
 	int getValue() { return value; };
+	void draw();
 
 private:
 	int value = 0;

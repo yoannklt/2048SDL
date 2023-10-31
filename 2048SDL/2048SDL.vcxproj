@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp" />
+    <ClCompile Include="gameObject.cpp" />
     <ClCompile Include="window.cpp" />
     <ClCompile Include="grid.cpp" />
     <ClCompile Include="main.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.hpp" />
+    <ClInclude Include="gameObject.hpp" />
     <ClInclude Include="window.hpp" />
     <ClInclude Include="grid.hpp" />
   </ItemGroup>
