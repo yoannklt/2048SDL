@@ -140,17 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cell.cpp" />
-    <ClCompile Include="game.cpp" />
+    <ClCompile Include="window.cpp" />
     <ClCompile Include="grid.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="gameObject.cpp" />
-    <ClCompile Include="gameObject.hpp" />
-    <ClCompile Include="window.cpp" />
-    <ClCompile Include="window.hpp" />
+    <ClCompile Include="textureManager.cpp" />
+    <ClCompile Include="textureManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.hpp" />
-    <ClInclude Include="game.hpp" />
+    <ClInclude Include="window.hpp" />
     <ClInclude Include="grid.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

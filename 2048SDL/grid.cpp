@@ -17,8 +17,8 @@ Grid::Grid()
 
 	srand(static_cast<unsigned>(time(0)));
 
-	generateRandomCell(0);
-	generateRandomCell(0);
+	generateRandomCell();
+	generateRandomCell();
 }
 
 int Grid::randomValue()

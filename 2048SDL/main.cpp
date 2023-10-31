@@ -1,6 +1,6 @@
 #include <iostream>
 #include "SDL.h"
-#include "game.hpp"
+#include "window.hpp"
 
 
 int main(int argc, char* argv[])
@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 	Uint32 frameStart;
 	int frameTime;
 
-	Game game = Game("2048", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
+	Window game = Window("2048", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
 
 	while (game.running())
 	{
