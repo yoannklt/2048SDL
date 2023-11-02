@@ -9,6 +9,7 @@ public:
 	~GameObject();
 
 	virtual void setRect(int x, int y);
+	virtual SDL_Rect getRect() { return destR; };
 	virtual void render();
 
 protected:

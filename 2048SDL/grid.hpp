@@ -15,6 +15,8 @@ public:
 	bool hasLost() { return lost; };
 	void render();
 	bool slide();
+	void setAnimation();
+	void animation();
 	void setVect(int x, int y) { directionVect[0] = x; directionVect[1] = y; };
 	bool vectEmpty() { if (directionVect[0] + directionVect[1] == 0) return true; return false; }
 

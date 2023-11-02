@@ -102,6 +102,76 @@ bool Grid::slide()
 	return doesMove;
 }
 
+void Grid::setAnimation()
+{
+	int iMove = 0;
+	int temp = 0;
+	int iAdd = 0;
+	int yAdd = 0;
+
+	if (directionVect[1] == -1) {
+		iAdd = 3;
+	}
+	if (directionVect[0] == -1) {
+		yAdd = 3;
+	}
+
+	for (int row = 0; row < 4; row++) {
+
+		for (int i = 3; i >= 0; i--) {
+
+			int indexOne = row * (directionVect[0] * directionVect[0]) + directionVect[1] * i + iAdd;
+			int indexTwo = row * (directionVect[1] * directionVect[1]) + directionVect[0] * i + yAdd;
+			Cell* cell = tab[indexOne][indexTwo];
+
+			if (cell->getValue() == 0) {
+				iMove++;
+			}
+			else if (cell->getValue() == temp) {
+				iMove++;
+				cell->moveDist = iMove;
+			}
+			else {
+				cell->moveDist = iMove;
+			}
+			temp = cell->getValue();
+		}
+	}
+	animation();
+}
+
+void Grid::animation() {
+	bool endAnim = false;
+	const int FPS = 60;
+	const int frameDelay = 1000 / FPS;
+	Uint32 frameStart;
+	int frameTime;
+
+	for (int k = 0; k < 60; k++) {
+
+		int frameStart = SDL_GetTicks();
+
+		for (int i = 0; i < 4; i++) {
+
+			for (int j = 0; j < 4; j++) {
+
+				if (tab[i][j]->moveDist != 0) {
+					int x = tab[i][j]->getRect().x + ((directionVect[0] * tab[i][j]->moveDist) / FPS);
+					int y = tab[i][j]->getRect().y + ((directionVect[1] * tab[i][j]->moveDist) / FPS);
+					tab[i][j]->setRect(x, y);
+
+					if (tab[i][j]->getValue() != 0)
+						tab[i][j]->render();
+				}
+			}
+		}
+
+		frameTime = SDL_GetTicks() - frameStart;
+		if (frameTime < frameDelay)
+			SDL_Delay(frameDelay - frameTime);
+	}
+}
+
 void Grid::render() {
 
 	if (hasLost()) {

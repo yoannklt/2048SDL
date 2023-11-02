@@ -98,6 +98,7 @@ void Window::update()
 
 	if (!grid.vectEmpty())
 	{
+		//grid.setAnimation();
 		if (grid.slide())
 		{
 			grid.generateRandomCell();
