@@ -26,8 +26,12 @@ void GameObject::createTexture(const char* fileName)
 	SDL_FreeSurface(tmpSur);
 }
 
+void GameObject::setRect(int x, int y)
+{
+	srcR.x = x;
+	srcR.y = y;
+}
+
 void GameObject::render()
 {
-	SDL_RenderCopy(Window::renderer, this->tex, &srcR, &destR);
-
 }

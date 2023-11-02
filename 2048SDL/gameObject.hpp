@@ -9,9 +9,10 @@ public:
 	~GameObject();
 
 	void createTexture(const char* fileName);
-	void render();
+	void setRect(int x, int y);
+	virtual void render();
 
-private:
+protected:
 	SDL_Rect srcR, destR;
 	SDL_Texture* tex;
 };
