@@ -19,12 +19,6 @@ GameObject::~GameObject()
 {
 }
 
-void GameObject::createTexture(const char* fileName)
-{
-	SDL_Surface* tmpSur = IMG_Load(fileName);
-	tex = SDL_CreateTextureFromSurface(Window::renderer, tmpSur);
-	SDL_FreeSurface(tmpSur);
-}
 
 void GameObject::setRect(int x, int y)
 {

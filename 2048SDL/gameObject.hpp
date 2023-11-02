@@ -14,5 +14,4 @@ public:
 
 protected:
 	SDL_Rect srcR, destR;
-	SDL_Texture* tex;
 };

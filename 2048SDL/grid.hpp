@@ -3,7 +3,7 @@
 #include <vector>
 
 class Cell;
-class SDL_Texture;
+struct SDL_Texture;
 
 class Grid {
 public:
