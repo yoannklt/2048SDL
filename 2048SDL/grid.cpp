@@ -41,7 +41,7 @@ void Grid::generateRandomCell(/*int i = -1*/)
 	}
 
 	// int randomNumber = i;
-	if (randomNumber == -1)
+
 		randomNumber = rand() % emptyCellGrid.size();
 
 	emptyCellGrid[randomNumber]->setValue(randomValue());
