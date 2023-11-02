@@ -19,15 +19,9 @@ GameObject::~GameObject()
 {
 }
 
-void GameObject::createTexture(const char* fileName)
-{
-	SDL_Surface* tmpSur = IMG_Load(fileName);
-	tex = SDL_CreateTextureFromSurface(Window::renderer, tmpSur);
-	SDL_FreeSurface(tmpSur);
-}
 
 void GameObject::render()
 {
-	SDL_RenderCopy(Window::renderer, this->tex, &srcR, &destR);
+	SDL_RenderCopy(Window::renderer, getTexture(), &srcR, &destR);
 
 }
