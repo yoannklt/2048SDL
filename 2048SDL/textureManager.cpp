@@ -16,12 +16,16 @@ SDL_Texture* TextureManager::getTexture(const std::string& fileName)
 	}
 
 	SDL_Surface* tmpSur = IMG_Load(fileName.c_str());
+	if (tmpSur == NULL) 
+	{
+		std::cout << "ERROR ";
+		exit(1);
+	}
+
 	SDL_Texture* tex = SDL_CreateTextureFromSurface(Window::renderer, tmpSur);
 	SDL_FreeSurface(tmpSur);
 
 	TextureManager::textures[fileName] = tex;
 
 	return tex;
-
-	return NULL;
 }

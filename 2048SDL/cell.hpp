@@ -16,6 +16,7 @@ public:
 	void resetMerge() { merge = false; };
 	void setValue(int newValue) { value = newValue; };
 	int getValue() { return value; };
+	void setRect(int x, int y) override;
 	void render() override;
 
 private:

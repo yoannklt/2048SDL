@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 	Uint32 frameStart;
 	int frameTime;
 
-	Window game = Window("2048", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
+	Window game = Window("2048", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 512, 512, false);
 
 	while (game.running())
 	{

@@ -109,8 +109,24 @@ void Grid::render() {
 	}
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 4; j++) {
-			tab[i][j]->setRect(64 * j, 64 * i);
-			tab[i][j]->render();
+			tab[i][j]->setRect(128 * j, 128 * i);
+			switch (tab[i][j]->getValue())
+			{
+			case 2:
+			case 4:
+			case 8:
+			case 16:
+			case 32:
+			case 64:
+			case 128:
+			case 256:
+			case 512:
+			case 1024:
+			case 2048:
+				tab[i][j]->render();
+			default:
+				break;
+			}
 		}
 	}
 }

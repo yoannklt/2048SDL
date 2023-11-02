@@ -8,8 +8,7 @@ public:
 	GameObject();
 	~GameObject();
 
-	void createTexture(const char* fileName);
-	void setRect(int x, int y);
+	virtual void setRect(int x, int y);
 	virtual void render();
 
 protected:

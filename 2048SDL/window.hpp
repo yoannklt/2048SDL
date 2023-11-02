@@ -8,9 +8,9 @@ class Window {
 
 	Grid grid;
 
-
 public:
 
+	static int size;
 	Window(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	~Window();
 

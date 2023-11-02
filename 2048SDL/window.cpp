@@ -3,8 +3,12 @@
 
 SDL_Renderer* Window::renderer = nullptr;
 
+int Window::size = 0;
+
 Window::Window(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
+	Window::size++;
+
 	int flags = 0;
 	if (fullscreen)
 		flags = SDL_WINDOW_FULLSCREEN;
@@ -20,7 +24,7 @@ Window::Window(const char* title, int xpos, int ypos, int width, int height, boo
 		renderer = SDL_CreateRenderer(window, -1, 0);
 		if (renderer)
 		{
-			SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255);
+			SDL_SetRenderDrawColor(renderer, 237.2, 235.7, 202.2, 255);
 			std::cout << "Renderer Created" << std::endl;
 		}
 
