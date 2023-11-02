@@ -107,6 +107,7 @@ void Window::render()
 	SDL_RenderClear(renderer);
 
 	// T'ajoutes les trucs que tu veux afficher là 
+	grid.render();
 
 
 	SDL_RenderPresent(renderer);

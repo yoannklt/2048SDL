@@ -144,8 +144,6 @@
     <ClCompile Include="window.cpp" />
     <ClCompile Include="grid.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="textureManager.cpp" />
-    <ClCompile Include="textureManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cell.hpp" />

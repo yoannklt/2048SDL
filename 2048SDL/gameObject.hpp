@@ -1,6 +1,6 @@
 #pragma once
+#include "window.hpp"
 
-#include "textureManager.hpp"
 
 class GameObject
 {
@@ -8,9 +8,10 @@ public:
 	GameObject();
 	~GameObject();
 
-protected:
+	void createTexture(const char* fileName);
+	void render();
 
-	SDL_Rect src;
-	SDL_Rect dest;
-
+private:
+	SDL_Rect srcR, destR;
+	SDL_Texture* tex;
 };

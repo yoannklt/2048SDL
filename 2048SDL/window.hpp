@@ -1,14 +1,13 @@
 #pragma once
 
 #include <iostream>
+#include "SDL.h"
 #include "grid.hpp"
-
-class SDL_Window;
-class SDL_Renderer;
 
 class Window {
 
 	Grid grid;
+
 
 public:
 
@@ -22,6 +21,7 @@ public:
 	bool running() { return isRunning; };
 
 	static SDL_Renderer* renderer;
+
 
 private:
 

@@ -1,19 +1,33 @@
 #include "gameObject.hpp"
+#include "SDL.h"
+#include "SDL_Image.h"
 
 GameObject::GameObject()
 {
-	src.x = src.y = 0;
-	src.w = 64;
-	src.h = 64;
+	srcR.x = 0;
+	srcR.y = 0;
+	srcR.w = 64;
+	srcR.h = 64;
 
-	dest.x = 0;
-	dest.y = 0;
-	dest.w = src.w * 2;
-	dest.h = src.h * 2;
+	destR.x = 0;
+	destR.y = 0;
+	destR.w = srcR.w * 2;
+	destR.h = srcR.h * 2;
 }
 
-
-
-
 GameObject::~GameObject()
-{}
+{
+}
+
+void GameObject::createTexture(const char* fileName)
+{
+	SDL_Surface* tmpSur = IMG_Load(fileName);
+	tex = SDL_CreateTextureFromSurface(Window::renderer, tmpSur);
+	SDL_FreeSurface(tmpSur);
+}
+
+void GameObject::render()
+{
+	SDL_RenderCopy(Window::renderer, this->tex, &srcR, &destR);
+
+}

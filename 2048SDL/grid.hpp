@@ -3,6 +3,7 @@
 #include <vector>
 
 class Cell;
+class SDL_Texture;
 
 class Grid {
 public:
@@ -10,7 +11,7 @@ public:
 	~Grid() {};
 
 	int randomValue();
-	void generateRandomCell(int i = -1);
+	void generateRandomCell(/* int i = -1 */);
 	bool hasLost() { return lost; };
 	void render();
 	bool slide();
@@ -25,6 +26,9 @@ private:
 	bool lost = false;
 	std::vector<Cell*> emptyCellGrid;
 	int directionVect[2] = { 0, 0 };
+
+	std::vector<const char*> files;
+	std::vector<SDL_Texture*> textures;
 
 protected:
 	Cell* tab[4][4];

@@ -7,15 +7,18 @@
 Grid::Grid()
 {
 	for (int i = 0; i < 4; i++)
+	{
 		for (int j = 0; j < 4; j++)
 		{
-			tab[i][j] = new Cell();
+			tab[i][j] = new Cell();  
 		}
+	}
 
 	for (int i = 0; i < 4; i++)
 		for (int j = 0; j < 4; j++)
 			if (tab[i][j]->getValue() == 0)
 				emptyCellGrid.push_back(tab[i][j]);
+
 
 	srand(static_cast<unsigned>(time(0)));
 
@@ -25,18 +28,19 @@ Grid::Grid()
 
 int Grid::randomValue()
 {
-	int randomValue = 2;// (rand() % 2) == 0 ? 2 : 4;
+	int randomValue = (rand() % 2) == 0 ? 2 : 4; 
 	return randomValue;
 }
 
-void Grid::generateRandomCell(int i /*= -1*/)
+void Grid::generateRandomCell(/*int i = -1*/)
 {
+	int randomNumber = 0;
 	if (emptyCellGrid.empty()) {
 		this->lost = true;
 		return;
 	}
 
-	int randomNumber = i;
+	// int randomNumber = i;
 	if (randomNumber == -1)
 		randomNumber = rand() % emptyCellGrid.size();
 
