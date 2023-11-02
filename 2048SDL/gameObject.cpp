@@ -6,13 +6,13 @@ GameObject::GameObject()
 {
 	srcR.x = 0;
 	srcR.y = 0;
-	srcR.w = 128;
-	srcR.h = 128;
+	srcR.w = 200;
+	srcR.h = 200;
 
 	destR.x = 0;
 	destR.y = 0;
-	destR.w = srcR.w;
-	destR.h = srcR.h;
+	destR.w = 128;
+	destR.h = 128;
 }
 
 GameObject::~GameObject()
