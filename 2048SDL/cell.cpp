@@ -20,9 +20,7 @@ void Cell::setRect(int x, int y)
 
 void Cell::render()
 {
-	std::string test1 = "img/";
-	std::string test2 = ".png";
-	std::string path = test1 + std::to_string(value) + test2;
+	std::string path = "img/" + std::to_string(value) + ".png";
 	if (SDL_RenderCopy(Window::renderer, TextureManager::getTexture(path), &srcR, &destR) != 0)
 		std::cout << SDL_GetError() << std::endl;
 	
